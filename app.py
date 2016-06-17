@@ -31,22 +31,44 @@ def known(words):
     return set(w for w in words if w in NWORDS)
 
 def correct(word):
-    candidates = known([word]) or known(edits1(word)) or    known_edits2(word) or [word]
+    word = word.lower()
+    if len(word) == 3 or word in ['us', 'uk']:
+        candidates = known([word])
+    elif len(word) <= 2:
+        raise Exception("too short")
+    else:
+        candidates = known([word]) or known(edits1(word)) or known_edits2(word) or [word]
     return max(candidates, key=NWORDS.get)
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 @app.route("/")
 def root():
     return ("<pre>"
-                "Example Usage: /russssia \n"
-                "Example Usage: /azerbyejan \n"
+                "Example Usage:\n\n"
+                    "\t" + request.url.rstrip("/") + "/russssia\n"
+                    "\t" + request.url.rstrip("/") + "/azerbyejan\n"
+                    "\t" + request.url.rstrip("/") + "/refuugeee\n"
+                    "\t" + request.url.rstrip("/") + "/amurica\n"
+                    "\t" + request.url.rstrip("/") + "/amerika\n"
+                    "\t" + request.url.rstrip("/") + "/us\n"
+                    "\t" + request.url.rstrip("/") + "/uk\n"
+                    "\t" + request.url.rstrip("/") + "/britain\n"
+                    "\t" + request.url.rstrip("/") + "/great%20britain\n"
+                    "\t" + request.url.rstrip("/") + "/russssia\n"
+                    "\t" + request.url.rstrip("/") + "/azerbyejan\n"
+                    "\t" + request.url.rstrip("/") + "/kergizstan\n"
+                    "\t" + request.url.rstrip("/") + "/leechtenstein\n"
             "</pre>")
 
 @app.route("/<country_input>")
 def hello(country_input=None):
-    country_output = correct(country_input)
+    try:
+        country_output = correct(country_input)
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
     try:
         country_code = reversed_national_olympic_committees[country_output]
     except KeyError as e:

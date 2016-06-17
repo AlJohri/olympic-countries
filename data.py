@@ -186,9 +186,9 @@ national_olympic_committees = {
     "UAE": ["United Arab Emirates", "UAE"],
     "RUS": ["Russian Federation", "Russia"],
     "FSM": ["Federated States of Micronesia", "Micronesia"],
-    "USA": ["United States of America", "USA", "America"],
+    "USA": ["US", "United States of America", "America"],
     "HKG": ["Hong Kong, China", "Hong Kong"],
-    "GBR": ["Great Britain", "Britain", "UK", "United Kingdom", "England"],
+    "GBR": ["UK", "Great Britain", "Britain", "United Kingdom", "England"],
     "CAY": ["Cayman Islands", "Cayman"],
     "COK": ["Cook Islands", "Cook"],
     "MHL": ["Marshall Islands"],
@@ -230,6 +230,7 @@ national_olympic_committees = {
 reversed_national_olympic_committees = {}
 
 for abbreviation, names in national_olympic_committees.items():
+    abbreviation = abbreviation.lower()
     for name in names:
         name = name.lower()
         if name in reversed_national_olympic_committees:
@@ -237,3 +238,7 @@ for abbreviation, names in national_olympic_committees.items():
                 name, reversed_national_olympic_committees[name], abbreviation))
         else:
             reversed_national_olympic_committees[name] = abbreviation
+    reversed_national_olympic_committees[abbreviation] = abbreviation
+    abbreviation_with_dots = "".join([c + "." for c in abbreviation])
+    reversed_national_olympic_committees[abbreviation_with_dots] = abbreviation
+    reversed_national_olympic_committees[abbreviation_with_dots.rstrip(".")] = abbreviation
