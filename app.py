@@ -31,13 +31,16 @@ def known(words):
     return set(w for w in words if w in NWORDS)
 
 def correct(word):
-    word = word.lower()
+    word = word.lower().replace(".", "")
     if len(word) == 3 or word in ['us', 'uk']:
         candidates = known([word])
     elif len(word) <= 2:
         raise Exception("too short")
     else:
         candidates = known([word]) or known(edits1(word)) or known_edits2(word) or [word]
+
+    if len(candidates) == 0:
+        raise Exception("no candidates found for %s" % word)
     return max(candidates, key=NWORDS.get)
 
 from flask import Flask, jsonify, request

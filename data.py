@@ -239,6 +239,3 @@ for abbreviation, names in national_olympic_committees.items():
         else:
             reversed_national_olympic_committees[name] = abbreviation
     reversed_national_olympic_committees[abbreviation] = abbreviation
-    abbreviation_with_dots = "".join([c + "." for c in abbreviation])
-    reversed_national_olympic_committees[abbreviation_with_dots] = abbreviation
-    reversed_national_olympic_committees[abbreviation_with_dots.rstrip(".")] = abbreviation
