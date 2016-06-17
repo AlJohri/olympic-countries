@@ -195,14 +195,14 @@ national_olympic_committees = {
     "MHL": ["Marshall Islands"],
     "SOL": ["Solomon Islands", "Solomon"],
     "MDA": ["Republic of Moldova", "Moldova"],
-    "IRI": ["Islamic Republic of Iran", "Iran"],
-    "CHN": ["People's Republic of China", "China"],
-    "LAO": ["Lao People's Democratic Republic", "Laos"],
+    "IRI": ["Iran", "Islamic Republic of Iran"],
+    "CHN": ["China", "People's Republic of China"],
+    "LAO": ["Laos", "Lao People's Democratic Republic"],
     "SKN": ["Saint Kitts and Nevis", "Saint Kitts", "Kitts"],
     "VIN": ["Saint Vincent and the Grenadines", "Saint Vincent", "Grenadines"],
     "TPE": ["Taiwan", "Chinese Taipei"],
     "TTO": ["Trinidad and Tobago", "Trinidad", "Tobago"],
-    "MKD": ["Former Yugoslav Republic of Macedonia", "Yugoslav", "Macedonia"],
+    "MKD": ["Former Yugoslav Republic of Macedonia", "Yugoslav", "Yugoslavia", "Macedonia"],
     "ANT": ["Antigua and Barbuda", "Antigua", "Barbuda"],
     "ROA": ["Refugee Olympic Athletes", "Refugee"],
 
@@ -210,8 +210,8 @@ national_olympic_committees = {
 
     "STP": ["São Tomé and Príncipe"],
 
-    "KOR": ["Republic of Korea", "South Korea", "Korea"],
-    "PRK": ["Democratic People's Republic of Korea", "North Korea"],
+    "KOR": ["South Korea", "Republic of Korea", "Korea"],
+    "PRK": ["North Korea", "Democratic People's Republic of Korea",],
 
     "GUI": ["Guinea"],
     "GBS": ["Guinea-Bissau"],
