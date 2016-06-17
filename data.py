@@ -188,7 +188,7 @@ national_olympic_committees = {
     "FSM": ["Federated States of Micronesia", "Micronesia"],
     "USA": ["United States of America", "USA", "America"],
     "HKG": ["Hong Kong, China", "Hong Kong"],
-    "GBR": ["Great Britain", "Britain", "UK", "United Kingdom"],
+    "GBR": ["Great Britain", "Britain", "UK", "United Kingdom", "England"],
     "CAY": ["Cayman Islands", "Cayman"],
     "COK": ["Cook Islands", "Cook"],
     "MHL": ["Marshall Islands"],
@@ -221,7 +221,7 @@ national_olympic_committees = {
     "SSD": ["South Sudan"],
 
     "CGO": ["Congo"],
-    "COD": ["Democratic Republic of the Congo"],
+    "COD": ["Democratic Republic of the Congo", "Democratic Congo", "Republic of Congo", "Republic Congo"],
 
     "ISV": ["Virgin Islands"],
     "IVB": ["British Virgin Islands"],
