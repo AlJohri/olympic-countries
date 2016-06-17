@@ -6,6 +6,7 @@
 
 # https://en.wikipedia.org/wiki/National_Olympic_Committee
 
+# cannonical name is the first in the list
 national_olympic_committees = {
     "GRE": ["Greece"],
     "AFG": ["Afghanistan"],
@@ -184,11 +185,11 @@ national_olympic_committees = {
 
     "BIH": ["Bosnia and Herzegovina", "Bosnia", "Herzegovina"],
     "UAE": ["United Arab Emirates", "UAE"],
-    "RUS": ["Russian Federation", "Russia"],
+    "RUS": ["Russia", "Russian Federation"],
     "FSM": ["Federated States of Micronesia", "Micronesia"],
-    "USA": ["US", "United States of America", "America"],
+    "USA": ["United States", "United States of America", "America", "US"],
     "HKG": ["Hong Kong, China", "Hong Kong"],
-    "GBR": ["UK", "Great Britain", "Britain", "United Kingdom", "England"],
+    "GBR": ["Britain", "Great Britain", "United Kingdom", "England", "UK"],
     "CAY": ["Cayman Islands", "Cayman"],
     "COK": ["Cook Islands", "Cook"],
     "MHL": ["Marshall Islands"],
@@ -199,7 +200,7 @@ national_olympic_committees = {
     "LAO": ["Lao People's Democratic Republic", "Laos"],
     "SKN": ["Saint Kitts and Nevis", "Saint Kitts", "Kitts"],
     "VIN": ["Saint Vincent and the Grenadines", "Saint Vincent", "Grenadines"],
-    "TPE": ["Chinese Taipei", "Taiwan"],
+    "TPE": ["Taiwan", "Chinese Taipei"],
     "TTO": ["Trinidad and Tobago", "Trinidad", "Tobago"],
     "MKD": ["Former Yugoslav Republic of Macedonia", "Yugoslav", "Macedonia"],
     "ANT": ["Antigua and Barbuda", "Antigua", "Barbuda"],

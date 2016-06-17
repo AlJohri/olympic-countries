@@ -4,7 +4,7 @@ import re, csv, collections
 # https://en.wikipedia.org/wiki/2016_Summer_Olympics_Parade_of_Nations
 # https://en.wikipedia.org/wiki/Comparison_of_IOC,_FIFA,_and_ISO_3166_country_codes
 
-from data import reversed_national_olympic_committees
+from data import reversed_national_olympic_committees, national_olympic_committees
 country_names = list(reversed_national_olympic_committees.keys())
 
 def train(features):
@@ -73,10 +73,13 @@ def hello(country_input=None):
         return jsonify({"error": str(e)})
 
     try:
-        country_code = reversed_national_olympic_committees[country_output]
+        country_code = reversed_national_olympic_committees[country_output].upper()
     except KeyError as e:
         return jsonify({"error": "%s not found" % country_output})
-    return jsonify({"country": country_output, "code": country_code})
+    return jsonify({
+        "country": national_olympic_committees[country_code][0],
+        "code": country_code
+    })
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
